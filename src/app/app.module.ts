@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'  
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -11,6 +12,7 @@ import { NewTrainingComponent } from './training/new-training/new-training.compo
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
 import { AppRoutingModule } from './app-routing.module';
+
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
