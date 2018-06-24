@@ -1,0 +1,25 @@
+.full-height{
+    height: 100%;
+}
+.main-logo {
+}
+.main-sidenav{
+    width: 300px;
+    padding: 15px;
+}
+.main-nav-wrapper{
+    list-style: none;
+}
+.main-nav-link{
+    display: inline-block;
+}
+.main-nav-link a, .main-logo a{
+    color: #fff;
+    padding: 10px ;
+    text-decoration: none;
+    font-size: 14px;
+}
+.nav-caption{
+    display: inline-block;
+    padding-left: 6px;
+}
