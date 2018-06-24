@@ -1,3 +1,6 @@
-.form-input{
+.form-input, .full-button{
     width: 320px;
+}
+.full-button{
+    padding: 10px;
 }
