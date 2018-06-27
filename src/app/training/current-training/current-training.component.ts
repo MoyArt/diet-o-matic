@@ -17,9 +17,8 @@ export class CurrentTrainingComponent implements OnInit {
         clearInterval(this.timer);
       }
     }, 1000)
-  }
+  };
   onStop(){
     clearInterval(this.timer);
   }
-
 }
