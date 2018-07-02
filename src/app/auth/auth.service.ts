@@ -9,5 +9,17 @@ export class AuthService{
             email: authData.email,
             userId: Math.round(Math.random() * 1000).toString()
         }
+    };
+    loginUser(authData: AuthData){
+        this.user = {
+            email: authData.email,
+            userId: Math.round(Math.random() * 1000).toString()
+        }
+    };
+    logoutUser(authData: AuthData){
+        this.user = null
+    };
+    getUser(){
+        return {...this.user};
     }
 }
