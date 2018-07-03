@@ -1,7 +1,9 @@
-import{User} from './user.model';
-import{AuthData} from './auth-data.model'
+import { Subject } from 'rxjs/Subject';
+import { User } from './user.model';
+import { AuthData } from './auth-data.model';
 
 export class AuthService{
+    authChange = new Subject<boolean>();
     private user: User;
 
     registerUser(authData: AuthData){
