@@ -10,16 +10,19 @@ export class AuthService{
         this.user = {
             email: authData.email,
             userId: Math.round(Math.random() * 1000).toString()
-        }
+        };
+        this.authChange.next(true);
     };
     loginUser(authData: AuthData){
         this.user = {
             email: authData.email,
             userId: Math.round(Math.random() * 1000).toString()
-        }
+        };
+        this.authChange.next(true);
     };
     logoutUser(authData: AuthData){
-        this.user = null
+        this.user = null;
+        this.authChange.next(false);
     };
     getUser(){
         return {...this.user};
