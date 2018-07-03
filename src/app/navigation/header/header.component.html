@@ -7,10 +7,10 @@
     <div class="main-logo"><a routerLink="/">Diet-O-Matic App</a></div>
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul class="main-nav-wrapper">
-            <li class="main-nav-link"><a routerLink="/signup">Signup</a></li>
-            <li class="main-nav-link"><a routerLink="/login">Login</a></li>
-            <li class="main-nav-link"><a routerLink="/training">Training</a></li>
-            <li class="main-nav-link"><a>Logout</a></li>
+            <li class="main-nav-link" *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
+            <li class="main-nav-link" *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
+            <li class="main-nav-link" *ngIf="isAuth"><a routerLink="/training">Training</a></li>
+            <li class="main-nav-link" *ngIf="isAuth"><a>Logout</a></li>
         </ul>
     </div>
 </mat-toolbar>
