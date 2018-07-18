@@ -5,7 +5,8 @@ export class TrainingService {
         { id: 'crunches', name: 'Crunches', duration: 30, calories: 8 },
         { id: 'touch-toes', name: 'Touch Toes', duration: 180, calories: 15 },
         { id: 'side-lunges', name: 'Side Lunges', duration: 120, calories: 18 },
-        { id: 'burpees', name: 'Burpees', duration: 60, calories: 8 }
+        { id: 'burpees', name: 'Burpees', duration: 60, calories: 8 },
+        { id: 'planks', name: 'Planks', duration: 90, calories: 30 }
     ];
     getAvailableExercises(){
         return this.availableExercises.slice();
