@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { User } from './user.model';
 import { AuthData } from './auth-data.model';
 import { Injectable } from '@angular/core';
-
 @Injectable()
 
 export class AuthService{
@@ -25,7 +24,8 @@ export class AuthService{
         };
         this.loginSuccess()
     };
-    logoutUser(authData: AuthData){
+    logout(authData: AuthData){
+        console.log('Abrazos no balazos')
         this.user = null;
         this.authChange.next(false);
         this.router.navigate(['/login']);
