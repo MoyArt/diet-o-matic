@@ -1,12 +1,12 @@
 <section class="login-form">
   <form fxLayout="column" fxLayoutAlign="center center" flexLayoutGap="15px" #loginFormData="ngForm" (ngSubmit)="onSubmit(loginFormData)" >
     <mat-form-field class="form-input">
-      <input type="email" matInput ngModel name="login-email" #loginEmailInput="ngModel" placeholder="Registered email" email required>
+      <input type="email" matInput ngModel name="loginEmail" #loginEmailInput="ngModel" placeholder="Registered email" email required>
       <mat-error *ngIf="loginEmailInput.hasError('required')">Field must not be empty</mat-error>
       <mat-error *ngIf="!loginEmailInput.hasError('required')">Email is invalid</mat-error>
     </mat-form-field>
     <mat-form-field class="form-input">
-      <input type="password" matInput ngModel name="login-password" #loginPasswordInput="ngModel" placeholder="Registered password" required>
+      <input type="password" matInput ngModel name="loginPassword" #loginPasswordInput="ngModel" placeholder="Registered password" required>
       <mat-error *ngIf="loginPasswordInput.hasError('required')">Field must not be empty</mat-error>
     </mat-form-field>
     <button class="full-button" type="submit" mat-raised-button color="primary" [disabled]="loginFormData.invalid">Send</button>
