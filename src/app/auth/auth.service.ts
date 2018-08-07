@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 
 export class AuthService{
     authChange = new Subject<boolean>();
-    private user: User;
+    private isAuthenticated = false;
     constructor(private router:Router, private afAuth:AngularFireAuth){}
 
     registerUser(authData: AuthData){
@@ -37,18 +37,15 @@ export class AuthService{
         });
     };
     logout(authData: AuthData){
-        console.log('Abrazos no balazos')
-        this.user = null;
         this.authChange.next(false);
         this.router.navigate(['/login']);
-    };
-    getUser(){
-        return {...this.user};
+        this.isAuthenticated = false;
     };
     isAuth(){
-        return this.user != null;
+        return this.isAuthenticated;
     }
     loginSuccess(){
+        this.isAuthenticated = true;
         this.authChange.next(true);
         this.router.navigate(['/training']);
     }
