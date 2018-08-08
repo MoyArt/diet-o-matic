@@ -16,7 +16,6 @@ export class AuthService{
         private router:Router, 
         private afAuth:AngularFireAuth, 
         private trainingService: TrainingService,
-        private snackbar: MatSnackBar,
         private uiService: UIService
     ){}
 
@@ -44,12 +43,11 @@ export class AuthService{
             this.uiService.loadingStateChanged.next(false)
         }).catch(error => {
             this.uiService.loadingStateChanged.next(false)
-            this.snackbar.open(error.message, null, {
-                duration: 3000
-            })
+            this.uiService.showSnackbar(error.message, null, 3000);
         })
         
     };
+
     loginUser(authData: AuthData){
         this.uiService.loadingStateChanged.next(true)
         this.afAuth.auth.signInWithEmailAndPassword(
@@ -59,14 +57,14 @@ export class AuthService{
             this.uiService.loadingStateChanged.next(false)
         }).catch(error => {
             this.uiService.loadingStateChanged.next(false)
-            this.snackbar.open(error.message, null, {
-                duration: 3000
-            })
+            this.uiService.showSnackbar(error.message, null, 3000);
         });
     };
+
     logout(authData: AuthData){
         this.afAuth.auth.signOut();
     };
+    
     isAuth(){
         return this.isAuthenticated;
     }
