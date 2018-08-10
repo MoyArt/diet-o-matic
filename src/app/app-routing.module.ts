@@ -4,7 +4,8 @@ import { WellcomeComponent } from './wellcome/wellcome.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-    {path: '', component: WellcomeComponent}
+    {path: '', component: WellcomeComponent},
+    {path: 'training', loadChildren: './training/training.module#TrainingModule'}
 ];
 
 @NgModule({
