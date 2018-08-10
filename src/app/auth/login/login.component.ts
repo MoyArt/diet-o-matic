@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     })
   }
   onSubmit(form:NgForm){
-    debugger
     this.authService.loginUser({
       email: form.value.loginEmail,
       password: form.value.loginPassword
