@@ -9,7 +9,7 @@
       <input type="password" matInput ngModel name="loginPassword" #loginPasswordInput="ngModel" placeholder="Registered password" required>
       <mat-error *ngIf="loginPasswordInput.hasError('required')">Field must not be empty</mat-error>
     </mat-form-field>
-    <button *ngIf="!isLoading" class="full-button" type="submit" mat-raised-button color="primary" [disabled]="loginFormData.invalid">Send</button>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <button *ngIf="!(isLoading$ | async)" class="full-button" type="submit" mat-raised-button color="primary" [disabled]="loginFormData.invalid">Send</button>
+    <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
   </form>
 </section>
