@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { StoreModule } from '@ngrx/store'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'  
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -16,6 +17,7 @@ import { TrainingService } from './training/training.service';
 import { environment } from '../environments/environment'
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module';
+import { appReducer } from './app.reducer';
 
 
 
@@ -37,7 +39,8 @@ import { AuthModule } from './auth/auth.module';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot({ui: appReducer})
     
   ],
   providers: [AuthService, TrainingService, UIService],

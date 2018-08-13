@@ -17,6 +17,6 @@ export function appReducer(state = initialState, action){
             isLoading: false
         };
         default: 
-        return state
+        return state;
     }
 };
